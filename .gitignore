@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[oc]
+*.egg-info
+build/
+dist/
+
+# Virtual environments
+.venv
+venv/
+env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment files (중요!)
+env
+.env
+*.env
+**/.env
+**/env
+
+# OS
+.DS_Store
+
+# Project specific
+*.pdf
+*.zip
+uv.lock
+.python-version
