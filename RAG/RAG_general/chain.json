@@ -1,0 +1,106 @@
+{
+  "lc": 1,
+  "type": "constructor",
+  "id": [
+    "langchain",
+    "schema",
+    "runnable",
+    "RunnableSequence"
+  ],
+  "kwargs": {
+    "first": {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain",
+        "prompts",
+        "chat",
+        "ChatPromptTemplate"
+      ],
+      "kwargs": {
+        "input_variables": [
+          "question"
+        ],
+        "messages": [
+          {
+            "lc": 1,
+            "type": "constructor",
+            "id": [
+              "langchain",
+              "prompts",
+              "chat",
+              "HumanMessagePromptTemplate"
+            ],
+            "kwargs": {
+              "prompt": {
+                "lc": 1,
+                "type": "constructor",
+                "id": [
+                  "langchain",
+                  "prompts",
+                  "prompt",
+                  "PromptTemplate"
+                ],
+                "kwargs": {
+                  "input_variables": [
+                    "question"
+                  ],
+                  "template": "다음 내용을 아주 짧고 간단하게 한문장으로 설명해줘. 질문 :{question} 설명 : ",
+                  "template_format": "f-string"
+                },
+                "name": "PromptTemplate"
+              }
+            }
+          }
+        ]
+      },
+      "name": "ChatPromptTemplate"
+    },
+    "middle": [
+      {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain",
+          "chat_models",
+          "azure_openai",
+          "AzureChatOpenAI"
+        ],
+        "kwargs": {
+          "temperature": 0.2,
+          "openai_api_key": {
+            "lc": 1,
+            "type": "secret",
+            "id": [
+              "AZURE_OPENAI_API_KEY"
+            ]
+          },
+          "stream_usage": true,
+          "disabled_params": {
+            "parallel_tool_calls": null
+          },
+          "output_version": "v0",
+          "azure_endpoint": "https://kt-openai.openai.azure.com/openai/deployments/gpt-4.1-mini/chat/completions?api-version=2025-01-01-preview",
+          "deployment_name": "gpt-5-mini",
+          "openai_api_version": "2024-12-01-preview",
+          "openai_api_type": "azure",
+          "validate_base_url": true
+        },
+        "name": "AzureChatOpenAI"
+      }
+    ],
+    "last": {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain",
+        "schema",
+        "output_parser",
+        "StrOutputParser"
+      ],
+      "kwargs": {},
+      "name": "StrOutputParser"
+    }
+  },
+  "name": "RunnableSequence"
+}
